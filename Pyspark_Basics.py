@@ -13,3 +13,4 @@ print(df)
 #Creating a spark dataframe
 sdf = spark.createDataFrame(df)
 print(sdf.show())
+print(sdf.printSchema())
