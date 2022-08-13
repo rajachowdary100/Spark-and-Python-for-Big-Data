@@ -6,16 +6,17 @@ import pyspark
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName('sparkDataframe').getOrCreate()
 # reading the json file
-# df = spark.read.json("people.json")
-# print(df.show())
+df = spark.read.json("people.json")
+print(df.show())
 # checking the schema of the dataframe
-# print(df.printSchema())
+print(df.printSchema())
 
 # checking the columns
-# print(df.columns)
+print(df.columns)
 # checking the summary statistics of the dataframe
-# print(df.describe().show())
+print(df.describe().show())
 
+# Manual setting of the dataframe schema
 # Defining/altering the schema-VERY IMPORTANT FOR LARGER DATASETS
 from pyspark.sql.types import (StructField,StringType,
                                IntegerType,StructType)
