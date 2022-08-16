@@ -6,7 +6,7 @@ import pyspark
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName('sparkDataframe').getOrCreate()
 # reading the json file
-df = spark.read.json("people.json")
+df = spark.read.json("datasets/people.json")
 print(df.show())
 # checking the schema of the dataframe
 print(df.printSchema())
@@ -24,7 +24,7 @@ from pyspark.sql.types import (StructField,StringType,
 data_schema = [StructField('age',IntegerType(),True),
                StructField('name',StringType(),True)]
 final_struc = StructType(fields=data_schema)
-df = spark.read.json('people.json',schema=final_struc)
+df = spark.read.json('datasets/people.json',schema=final_struc)
 df.show()
 df.printSchema()
 
