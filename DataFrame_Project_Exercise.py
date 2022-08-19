@@ -46,4 +46,3 @@ df_1.select('HV Ratio').show()
 from pyspark.sql.functions import max
 print(df.orderBy(df['High'].desc()).head(1)[0][0])
 
-# to be continued
